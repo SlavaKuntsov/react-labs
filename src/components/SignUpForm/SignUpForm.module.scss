@@ -1,0 +1,113 @@
+form{
+	display: flex;
+	flex-flow: column;
+	gap: 14px;
+	width: 300px;
+	background: rgb(32, 48, 117);
+	border: 1px solid #565656;
+	border-radius: 20px;
+	padding: 20px;
+	margin: 0 auto;
+	color: white;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	.allSelect{
+		h4{
+			padding: 0 0 10px 0;
+		}
+		select{
+			// height: 20px;
+			padding: 2px 5px;
+			border-radius: 8px;
+			font-size: 14px;
+			font-weight: 300;
+			margin: 0 5px 0 5px;
+		}
+		select:nth-child(2){
+			margin: 0 5px 0 0;
+		}
+		option{
+			font-size: 12px;
+			// font-weight: 300;
+			// opacity: 0.6;
+		}
+	}
+	.sex{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		div{
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			input{
+				margin: 0 5px 0 0;
+			}
+			label{
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+	}
+	h2{
+		color: white;
+		display: flex;
+		justify-content: center;
+		padding: 10px 0;
+	}
+	h4{
+		font-weight: 500;
+		font-size: 16px;
+	}
+	input{
+		font-size: 14px;
+		padding: 5px 10px;
+		// border: 1px solid #565656;
+		border-radius: 5px;
+	}
+	::placeholder {
+		font-weight: 200;
+		font-size: 12px;
+	}
+	.email, .password{
+		display: flex;
+		flex-flow: column;
+		position: relative;
+		label{
+			font-weight: 500;
+			font-size: 16px;
+		}
+		.invalid{
+			padding: 5px 0 0 0;
+			font-weight: 400;
+			p{
+				display: inline;
+				font-weight: 300;
+				font-size: 12px;
+			}
+		}
+		.emailInput{
+			display: flex;
+			align-items: center;
+		}
+		img{
+			position: absolute;
+			top: 3px;
+			right: 5px;
+		}
+		input[type="password"]:first-child{
+			margin: 0 0 10px 0;
+		}
+	}
+	.password{
+		img{
+			top: 40px;
+		}
+	}
+}
+.bar {
+	margin: 10px 0 -5px 0;
+	height: 5px;
+	background: white;
+	width: 100%;
+	border-radius: 20px;
+};

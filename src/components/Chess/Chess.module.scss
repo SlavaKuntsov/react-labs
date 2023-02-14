@@ -1,0 +1,47 @@
+.chess{
+	display: flex;
+	flex-flow: row;
+	.numbers{
+		display: flex;
+		flex-flow: column-reverse;
+		margin: 32px 0;
+		.number{
+			height: 64px;
+			padding: 0 5px;
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+	.vert{
+		.letters{
+			display: flex;
+			flex-flow: row;
+			.letter{
+				width: 64px;
+				height: 32px;
+				padding: 5px 0;
+				display: flex;
+				align-items: end;
+				justify-content: center;
+				font-size: 18px;
+				font-weight: 500;
+			}
+		}
+	}
+	.board{
+		width: calc(64px * 8 + 2px);
+		height: calc(64px * 8 + 2px);
+		outline: 1px solid black;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: center;
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+		.cell{
+			width: 64px;
+			height: 64px;
+			// outline: 1px solid black;
+		}
+	}
+}

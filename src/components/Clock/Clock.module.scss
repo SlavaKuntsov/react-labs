@@ -1,0 +1,67 @@
+.clock {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    .timeOutput {
+        background: rgb(32, 48, 117);
+        color: white;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        // margin: 0 0 10px 0;
+        p {
+            display: inline;
+        }
+    }
+    ul {
+        display: flex;
+        flex-flow: row;
+        gap: 20px;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            input[type="text"] {
+                border: 1px solid black;
+                padding: 5px 10px;
+                font-size: 16px;
+            }
+            label {
+                input {
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+
+        .btn label {
+            background: rgb(32, 48, 117);
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+			cursor: pointer;
+			transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+			&:hover{
+				background: lighten($color: rgb(32, 48, 117), $amount: 10%);
+				transform: translateY(-3px);
+			}
+
+			&:active{
+				background: darken($color: rgb(32, 48, 117), $amount: 10%);
+			}
+        }
+    }
+}
+.timezone{
+	width: 300px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+		svg{
+			width: 30px;
+			height: 30px;
+		}
+}
