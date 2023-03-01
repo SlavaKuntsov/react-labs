@@ -1,0 +1,8 @@
+.studentForm {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+}
+.studentForm input {
+  border: 1px solid black;
+}

@@ -10,7 +10,7 @@ function PhoneInput(props) {
 	const [flag, setFlag] = React.useState(false);
 	const [country, setCountry] = React.useState(false);
 	const [phoneCode, setPhoneCode] = React.useState(false);
-	const [border, setBorder] = React.useState("1px solid hsl(0, 0%, 80%)");
+	const [border, setBorder] = React.useState("1px solid rgba(0, 0, 0, 0.561)");
 
     const inputClick = () => {
         setValue("+XXX (XX) XXX-XX-XX");
@@ -61,7 +61,7 @@ function PhoneInput(props) {
         // }
         console.log(inputNum.replace(/\W/g, ''));
 
-		if(inputNum.replace(/\W/g, '').length === 12 && (country === "belarus" || country === "ukrain" || country === "litva")) {
+		if(inputNum.replace(/\W/g, '').length === 12 && (country === "belarus" || country === "ukraine" || country === "litva")) {
 			inputNum = inputNum.replace(/\W/g, '')
 			inputNum = `+${inputNum.slice(0,3)} (${inputNum.slice(3,5)}) ${inputNum.slice(5, 8)}-${inputNum.slice(8, 10)}-${inputNum.slice(10, 12)}`
 			setBorder("2px solid rgb(0, 160, 0)")
@@ -71,7 +71,7 @@ function PhoneInput(props) {
 			inputNum = `+${inputNum.slice(0,1)} (${inputNum.slice(1,4)}) ${inputNum.slice(4, 7)}-${inputNum.slice(7, 9)}-${inputNum.slice(9, 11)}`
 			setBorder("2px solid rgb(0, 160, 0)")
 		}
-		else if(inputNum.replace(/\W/g, '').length <= 10 || inputNum.replace(/\W/g, '').length >= 13) {
+		else if((inputNum.replace(/\W/g, '').length <= 10 || inputNum.replace(/\W/g, '').length >= 13) || inputNum.replace(/\W/g, '').length >= 13) {
 			setBorder("1px solid hsl(0, 0%, 80%)")
 		}
 		
@@ -89,7 +89,7 @@ function PhoneInput(props) {
 			!phoneCode &&
 			(phone.length < 5 || phone === "+7")
 		) {
-			if(country === "belarus" || country === "ukrain" || country === "litva") {
+			if(country === "belarus" || country === "ukraine" || country === "litva") {
 				const valid = phone + e.target.value
 				// console.log(valid);
 				setPhoneCode(true);
@@ -108,7 +108,7 @@ function PhoneInput(props) {
 		} 
 		else{
 			setPhoneCode(false);
-			if((country === "belarus" || country === "ukrain" || country === "litva") && e.target.value !== undefined) {
+			if((country === "belarus" || country === "ukraine" || country === "litva") && e.target.value !== undefined) {
 				const slicePhone = phone.slice(0, 4)
 				setPhone(slicePhone + "(" + e.target.value + ")")
 			} 
@@ -158,7 +158,7 @@ function PhoneInput(props) {
             case "+380":
                 // console.log("Украина");
                 setFlag("/img/украина.png");
-                setCountry("ukrain");
+                setCountry("ukraine");
                 break;
             case "+48":
                 // console.log("Польша");

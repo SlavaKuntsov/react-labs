@@ -24,7 +24,6 @@ function ProgressBar(props) {
 		let letters = [];
 		let alphabet = "abcdefgh".split("");
 		alphabet.forEach(element => {
-			// return <div className="letters">elem</div>
 			letters.push(element)
 		});
 		return letters.map((letter) => (

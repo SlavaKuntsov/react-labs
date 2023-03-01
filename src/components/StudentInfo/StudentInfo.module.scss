@@ -1,0 +1,187 @@
+$border: rgba(0, 0, 0, 0.561);
+$blue: rgb(78, 135, 251);
+
+.form2 {
+    background: white;
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.725);
+    border-radius: 8px;
+    padding: 30px 40px;
+    label {
+        font-weight: 600;
+        color: $border;
+    }
+    .h2 {
+        position: relative;
+        margin: 0 0 20px 0;
+        h2 {
+            font-size: 22px;
+        }
+    }
+    .h2::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 3px;
+        width: 36px;
+        border-radius: 10px;
+        background: rgb(85, 96, 240);
+    }
+    h3 {
+        color: rgba(0, 0, 0, 0.725);
+    }
+
+    .peopleInfo {
+        display: flex;
+        flex-flow: column;
+
+        .nameInput {
+            padding: 10px 0;
+            display: flex;
+            flex-flow: row;
+            gap: 30px;
+            color: rgba(0, 0, 0, 0.725);
+            font-weight: 600;
+            .input {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                input {
+                    border: 1px solid rgba(0, 0, 0, 0.561);
+                    border-radius: 5px;
+                    padding: 10px;
+                    font-size: 13px;
+                    width: 212px;
+                }
+                ::placeholder {
+                    font-weight: 500;
+                }
+            }
+        }
+        .dataInfo {
+            padding: 10px 0 20px;
+            display: flex;
+            flex-flow: row;
+            gap: 30px;
+            color: rgba(0, 0, 0, 0.725);
+            font-weight: 600;
+            .input {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+				input {
+                    border: 1px solid rgba(0, 0, 0, 0.561);
+                    border-radius: 5px;
+                    padding: 10px;
+                    font-size: 13px;
+                    width: 212px;
+                }
+            }
+        }
+    }
+    .univerInfo {
+        h3 {
+            padding: 0 0 10px 0;
+        }
+        .univer {
+            display: flex;
+            flex-flow: row;
+            gap: 30px;
+            .input,
+            .inputFacultet {
+                width: 212px;
+                border: 1px solid $border;
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $border;
+                label {
+                    color: $border;
+                    font-weight: 500;
+                }
+                select {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.816);
+                }
+            }
+        }
+    }
+    .button {
+        margin: 30px 0 0 0;
+        height: 40px;
+        width: 180px;
+        // border: 1px solid rgb(69, 107, 178);
+        background: $blue;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+		position: relative;
+		gap: 10px;
+		&::after{
+			content: "";
+			background: $blue;
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		&::before{
+			content: "";
+			background: $blue;
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.next{
+		}
+		.prev{
+			transform: rotate(180deg);
+		}
+    }
+
+    .container {
+        width: 700px;
+        height: 390px;
+        overflow: hidden;
+        .trackContainer {
+            display: flex;
+            flex-flow: row;
+            gap: 10px;
+            transition: transform .3s ease;
+            // transition: transform 0.3s ease-in-out;
+            .secondContainer {
+                table {
+					margin: 10px 0 0 0;
+                    tr {
+						// border-bottom: 2px solid $blue;
+                        td {
+							// display: flex;
+							// align-items: center;
+                            border: none;
+                            padding: 10px 20px 10px 0;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: rgba(0, 0, 0, 0.758);
+							white-space: nowrap;
+                        }
+                        td:first-child {
+                            width: 300px;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

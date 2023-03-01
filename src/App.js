@@ -8,8 +8,11 @@ import AllProfessions from "./components/Professions/AllProfessions";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SortTable from "./components/SortTable/SortTable";
 import Table from "./components/Table/Table.jsx";
+import StudentInfo from "./components/StudentInfo/StudentInfo";
+import Notes from "./components/Notes/Notes";
 
 function App() {
+	
     return (
         <div className="wrapper">
             <h2>1.1</h2>
@@ -40,8 +43,17 @@ function App() {
             <Calendar />
 
             <hr />
-            <h2>5.1</h2>
+            <h2>5</h2>
             <SignUpForm />
+
+			<hr />
+			<h2>6.1</h2>
+			<StudentInfo />
+
+			<h2>6.2</h2>
+			<Notes />
+
+			<hr />
         </div>
     );
 }

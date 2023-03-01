@@ -13,9 +13,9 @@ function PhoneRadio(props) {
         { country: "russia", operator: "МТС", code: "910" },
         { country: "russia", operator: "Tele2", code: "950" },
 
-        { country: "ukrain", operator: "Lifecell", code: "33" },
-        { country: "ukrain", operator: "Vodafone", code: "33" },
-        { country: "ukrain", operator: "Київстар", code: "33" },
+        { country: "ukraine", operator: "Lifecell", code: "33" },
+        { country: "ukraine", operator: "Vodafone", code: "33" },
+        { country: "ukraine", operator: "Київстар", code: "33" },
 
         { country: "poland", operator: "Orange", code: "33" },
         { country: "poland", operator: "Play", code: "33" },

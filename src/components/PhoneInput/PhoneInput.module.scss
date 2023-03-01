@@ -8,6 +8,7 @@
 		flex-flow: wrap;
 		align-items: center;
 		gap: 10px;
+		margin: 0 0 0 30px;
 		label{
 			display: flex;
 			align-items: center;
@@ -29,9 +30,10 @@
 			input{
 				display: flex;
 				align-items: center;	
-				border-radius: 10px;
+				border-radius: 5px;
 				width: 225px;
 				font-size: 13px;
+				transition: outline .2s ease-in-out;
 				::placeholder{
 					font-size: 14px;
 				}

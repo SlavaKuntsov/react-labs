@@ -45,6 +45,8 @@ function JobMenu(props) {
 		{job:"pov", nameLink:"Готовим", link:"https://www.gotovim.ru/"},
 	]
 
+	console.log(props.oneKey)
+	
     return(
 		<ul className={style.links}>
 			{allLinks

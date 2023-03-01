@@ -136,7 +136,7 @@ function SignUpPasswordInput(props) {
     }, [password, secondPassword]);
 
     return (
-        <div className={style.password}>
+        <div className="password">
             {/* <label>Password:</label> */}
             <input
                 style={{ outline: border }}
@@ -161,12 +161,12 @@ function SignUpPasswordInput(props) {
             )}
 
             {passwordDirty && passwordError && (
-                <div className={style.invalid}>
+                <div className="invalid">
                     <p>{passwordError}</p>
                 </div>
             )}
             {boolDefend && (
-                <div className={style.invalid}>
+                <div className="invalid">
                     <p>{defPassword}</p>
                 </div>
             )}

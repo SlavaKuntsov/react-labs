@@ -8,7 +8,7 @@ function SignUpEmailInput(props) {
 	const [emailDirty, setEmailDirty] = React.useState(false)
 	const [emailError, setEmailError] = React.useState("Введите Email")
 	
-	const [border, setBorder] = React.useState("1px solid #565656")
+	const [border, setBorder] = React.useState("1px solid rgba(0, 0, 0, 0.561)")
 	
 	const emailHandler = (e) => {
 		const emailInput = e.target.value	
@@ -24,11 +24,11 @@ function SignUpEmailInput(props) {
 				setBorder("2px solid red") //red
 			}
 			if(emailInput.length >= 1) {
-				setEmailError("Неккоректный Email")
+				setEmailError("Некорректный Email")
 				setBorder("2px solid red") //red
 			}
 			if (emailDirty && emailError){
-				// setEmailError("Неккоректный Email")
+				// setEmailError("Некорректный Email")
 				setBorder("2px solid red") //red
 			}
 		}
@@ -57,11 +57,10 @@ function SignUpEmailInput(props) {
 	}
 	
 	return (
-		<div className={style.email}>
-			{/* <label htmlForemail="email" className="pb-5">Email:</label> */}
-			<input required onBlur={blurHandler} onChange={emailHandler} value={email} style={{outline: border}} type="email" name="email" placeholder="email" id="email"/>
+		<div className="email">
+			<input required onBlur={blurHandler} onChange={emailHandler} value={email} style={{outline: border}} type="email" name="email" placeholder="email" id={props.email}/>
 			{(emailDirty && emailError) && <img width={21} height={21} src="/img/cross.png" alt="cross"/>}
-			{(emailDirty && emailError) && <div className={style.invalid}><p>{emailError}</p></div>}
+			{(emailDirty && emailError) && <div className="invalid"><p>{emailError}</p></div>}
 		</div>
 	)
 	

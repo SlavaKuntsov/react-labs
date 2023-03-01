@@ -3,7 +3,7 @@ import style from "./AllProfessions.module.scss"
 
 function Profession(props) {
 	const allProfessions = [
-		{job:"Програмист", key:"prog"},
+		{job:"Программист", key:"prog"},
 		{job:"Архитектор", key:"arc"},
 		{job:"Химик", key:"him"},
 		{job:"Инженер", key:"inj"},
