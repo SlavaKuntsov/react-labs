@@ -80,8 +80,6 @@ function PhoneInput(props) {
         switchCountry(inputNum);
     };
 
-    console.log(country);
-
 	const radioValue = (e) => {
 		// console.log(e.target.value);
 		if (

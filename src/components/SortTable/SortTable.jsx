@@ -47,7 +47,7 @@ function SortTable(props) {
 		console.log(first)
 		setIsFirst(first)
 	}
-	console.log(isFirst)
+	// console.log(isFirst)
 	// ====================================================
 
 

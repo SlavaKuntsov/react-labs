@@ -35,8 +35,6 @@ export default function SelectSpecialization(props) {
 		let value =  e.target.value
 		props.onAddSpec(value)
 		
-		console.log(value)
-
 		if( value === "ПОИТ" || value === "ИСиТ" || value === "ПОИБМС" || value  === "ДЭиВИ" ) {
 			props.onAddFacultet("ФИТ")
 		}

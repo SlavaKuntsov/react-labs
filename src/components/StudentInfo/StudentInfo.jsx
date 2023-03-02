@@ -12,9 +12,6 @@ export default function StudentInfo() {
 	const [selectSpec, setSelectSpec] = React.useState("")
 	const [selectFacultet, setSelectFacultet] = React.useState("")
 
-	console.log(selectFacultet)
-	console.log(selectSpec)
-	
 	const [fValue, setFValue] = React.useState("")
 	const [IValue, setIValue] = React.useState("")
 	const [OValue, setOValue] = React.useState("")

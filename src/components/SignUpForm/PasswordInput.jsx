@@ -82,8 +82,6 @@ function SignUpPasswordInput(props) {
             setDefPassword("Пароль должен быть более 8 символов");
         }
 
-        console.log(password);
-
         // if(password.length >= 8) {
         if (password.match(/[0-9]/)) {
             progress.push(1);
@@ -130,8 +128,6 @@ function SignUpPasswordInput(props) {
         }
 
         setProgressBar(progress.length);
-        console.log(progress.length);
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [password, secondPassword]);
 

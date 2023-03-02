@@ -7,10 +7,7 @@ function Clock() {
 	const [timeFormat, setTimeFormat] = React.useState(false)
 	const [value, setValue] = React.useState("3:00")
 
-	console.log(value)
-
 	const inputChange = (e) => {
-		console.log(e.target.value)
 		setValue(e.target.value)
 	}
 

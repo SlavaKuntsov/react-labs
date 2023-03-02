@@ -16,7 +16,6 @@ function DataSelect(props) {
 	const [year, setYear] = React.useState("00")
 
 	React.useEffect(() => {
-		console.log(day, month, year)
 		props.onSetDate(year)
 	}, [day, month, year])
 
