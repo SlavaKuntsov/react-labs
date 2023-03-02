@@ -13,7 +13,6 @@ function SelectCountry(props) {
 
 	return(
 		<select name="select" onChange={props.selectValue}>
-             <option selected disabled hidden></option>
              {countrySelect.map((item) => (
                  <option style={{padding:"5px"}} className="option" value={item.number} key={item.number}>
                     {item.name}

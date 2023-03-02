@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SelectSpecialization(props) {
+export default function SelectFaculty(props) {
 
 	const faculty = [
 		{id: 1, atr:"ФИТ"},
@@ -55,16 +55,13 @@ return (
 			<option disabled selected hidden>
 					...
 			</option>
-			{faculty.map(item => (
-				<>
-					{/* <option value={item.atr} key={item.key}>{item.name}</option> */}
-					<optgroup key={item.id} label={item.atr}>
-						{spec.filter(spec => spec.atr === item.atr)
-							.map(spec => (
-								<option key={spec.spec} value={spec.spec}>{spec.spec}</option>
-							))}
-					</optgroup>
-				</>
+			{faculty.map((item, index) => (
+				<optgroup key={index} label={item.atr}>
+					{spec.filter(spec => spec.atr === item.atr)
+						.map(spec => (
+							<option key={spec.spec} value={spec.spec}>{spec.spec}</option>
+						))}
+				</optgroup>
 			))}
 		</select>
 	</>

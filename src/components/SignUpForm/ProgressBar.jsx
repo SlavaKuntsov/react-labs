@@ -2,8 +2,6 @@ import React from "react";
 import style from "./SignUpForm.module.scss"
 
 function ProgressBar(props) {
-    console.log(props.completed * 20);
-
     // const bar = {
     //     margin: "5px 0 0 0",
     //     height: "5px",
