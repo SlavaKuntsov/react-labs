@@ -1,0 +1,63 @@
+$black: rgba(0, 0, 0, 0.561);
+
+.calendar{
+	width: calc(40px * 7);
+	display: flex;
+	flex-flow: column;
+	gap: 10px;
+	margin: 0 auto;
+	.calendarHead{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		select{
+			font-size: 14px;
+			color: black;
+		}
+		.button{
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			button{
+				cursor: pointer;
+				border: 1px solid black;
+				width: 30px;
+				height:30px;
+				font-size: 16px;
+			}
+		}
+	}
+	.calendarBody{
+		.cellsHead{
+			display: flex;
+			flex-flow: row;
+			justify-content: center;
+			h3{
+				width: 40px;
+				height:40px;
+			}
+		}
+		.cellsBody{
+			overflow-x: scroll;
+			width: calc(40px * 7);
+			margin: 0 auto;
+			.cellsTrack{
+				display: flex;
+				// flex-flow: wrap;
+				align-items: row;
+				transition: transform .2s ease-in-out;
+				.monthsCell{
+					min-width: calc(40px * 7);
+					display: flex;
+					flex-flow: wrap;
+					gap: 0;
+					align-content: start;
+					div{
+						width: 40px;
+						height:40px;
+					}
+				}
+			}
+		}
+	}
+}

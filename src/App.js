@@ -1,6 +1,6 @@
 import React from "react";
 
-import Calendar from "./components/Calendar";
+import Calendar from "./components/Calendar/Calendar";
 import Chess from "./components/Chess/Chess";
 import Clock from "./components/Clock/Clock";
 import PhoneInput from "./components/PhoneInput/PhoneInput";
