@@ -1,5 +1,23 @@
 $black: rgba(0, 0, 0, 0.561);
-$blue: rgb(78, 135, 251);
+$blue: rgb(115, 162, 254);
+
+.all{
+	display: flex;
+	flex-flow: column;
+	gap: 30px;
+	align-items: center;
+}
+
+.output{
+	background: white;
+	border-radius: 30px;
+	height: 50px;
+	width: 230px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+}
 
 .calendar{
 	width: calc(40px * 7 + 20px);
@@ -26,6 +44,7 @@ $blue: rgb(78, 135, 251);
 					font-size: 16px;
 					color: black;
 					appearance: none;
+					cursor: pointer;
 				}
 				div{
 					font-size: 16px;
@@ -35,7 +54,7 @@ $blue: rgb(78, 135, 251);
 				cursor: pointer;
 				width: 30px;
 				height:30px;
-				font-size: 16px;
+				font-size: 18px;
 				background: white;
 				color: $blue;
 				font-weight: 600;
@@ -46,7 +65,7 @@ $blue: rgb(78, 135, 251);
 		box-shadow: inset 0px 6px 20px -10px rgb(117 117 117 / 36%);
 		border-radius: 0 0 8px 8px;
 		padding: 0 0 10px 0;
-		background: rgb(194 194 194 / 36%);
+		background: rgba(194, 194, 194, 0.36);
 		.cellsHead{
 			display: flex;
 			flex-flow: row;
@@ -66,7 +85,6 @@ $blue: rgb(78, 135, 251);
 			margin: 0 auto;
 			.cellsTrack{
 				display: flex;
-				// flex-flow: wrap;
 				align-items: row;
 				transition: transform .2s ease;
 				.monthsCell{
@@ -75,6 +93,9 @@ $blue: rgb(78, 135, 251);
 					flex-flow: wrap;
 					gap: 0;
 					align-content: start;
+					.cell{
+						padding: 10px;
+					}
 					div{
 						cursor: pointer;
 						width: 40px;
@@ -83,10 +104,12 @@ $blue: rgb(78, 135, 251);
 						justify-content: center;
 						align-items: center;
 						border-radius: 10px;
-						transition: background .2s ease-in-out;
+						// background-clip:  padding-box;
+						background: transparent;
+						border: 2px solid transparent;
+						transition: background .2s ease-in-out, border .3s ease;
 						&:hover{
 							background: lighten($color: $blue, $amount: 13%);
-							
 						}
 					}
 				}

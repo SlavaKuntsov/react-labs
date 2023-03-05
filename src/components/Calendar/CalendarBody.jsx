@@ -1,81 +1,10 @@
 import React from "react";
 import style from "./Calendar.module.scss"
 
-function getDay (year) {
-	// console.clear()
-
-	const maxCells = 42
-
-	let monthsCell = []
-	var dayArray = []
-
-	for (let monthsNum = 1 ; monthsNum <= 12; monthsNum++) {
-
-		let cell = []
-		
-		var day = new Date(year + "-" + monthsNum + "-01").getDay() 
-
-		day = (day===0) ? 7 : day // день недели с которого начинается месяц
-
-		// console.log({day})
-
-
-		if (day > 1) {
-			let date = new Date(2023, monthsNum - 1, 0).getDate() // количество дней прошлого месяца
-
-			// console.log({date})
-			let prevMonthsDayStart = date - day + 2
-			// console.log({prevMonthsDayStart})
-
-			for (let nullCell = 1; nullCell <= day - 1; nullCell++) {
-				cell.push(`${prevMonthsDayStart++}`)
-			}
-			// console.log(cell)
-		}
-		
-		for (let i = 1; i <= new Date(2023, monthsNum, 0).getDate(); i++) {
-			cell.push(i)
-		}
-
-		// console.log(cell.length) // январь 2023, выводит 37 заполнено
-
-		let length = cell.length
-
-		// console.log("length " +  (maxCells - cell.length))
-
-		// если писать cell.length, а не создать length = cell.length, то цикл не все ячейки заполняет
-		for (let nextMonthsDayStart = 1; nextMonthsDayStart <= maxCells - length; nextMonthsDayStart++) {
-			cell.push(`${nextMonthsDayStart}`)
-			// console.log({nextMonthsDayStart})
-		}
-
-		monthsCell.push(cell)
-		
-		dayArray.push(day)
-	}
-	// console.table(monthsCell)
-
-
-	return monthsCell.map((item, index) => (
-		<div className={style.monthsCell} key={index}>
-			{item.map((item, index) => (
-				<div 
-				style={{
-					color: typeof item !== "string" ? "black" : "gray",
-					fontWeight: typeof item !== "string" ? "500" : "300"
-				}} 
-				key={index}
-				>
-					{item}
-				</div>
-			))}
-		</div>
-	))
-
-}
+import Cell from "./Cell";
 
 export default function CalendarBody(props) {
-
+	
 	// const months = {
 	// 	Jan: 1,
 	// 	Feb: 2,
@@ -90,6 +19,92 @@ export default function CalendarBody(props) {
 	// 	Nov: 11,
 	// 	Dec: 12,
 	// }
+	const getDayOn = (day) => {
+		props.getDayOn(day)
+	}
+
+	const  GetDay = (props, year) => {
+		// console.clear()
+	
+		const maxCells = 42
+	
+		let monthsCell = []
+		var dayArray = []
+	
+		for (let monthsNum = 1 ; monthsNum <= 12; monthsNum++) {
+	
+			let cell = []
+			
+			var day = new Date(year + "-" + monthsNum + "-01").getDay() 
+	
+			day = (day===0) ? 7 : day // день недели с которого начинается месяц
+	
+			// console.log({day})
+	
+			if (day > 1) {
+				let date = new Date(2023, monthsNum - 1, 0).getDate() // количество дней прошлого месяца
+	
+				// console.log({date})
+				let prevMonthsDayStart = date - day + 2
+				// console.log({prevMonthsDayStart})
+	
+				for (let nullCell = 1; nullCell <= day - 1; nullCell++) {
+					cell.push(`${prevMonthsDayStart++}`)
+				}
+				// console.log(cell)
+			}
+			
+			for (let i = 1; i <= new Date(2023, monthsNum, 0).getDate(); i++) {
+				cell.push(i)
+			}
+	
+			// console.log(cell.length) // январь 2023, выводит 37 заполнено
+	
+			let length = cell.length
+	
+			// console.log("length " +  (maxCells - cell.length))
+	
+			// если писать cell.length, а не создать length = cell.length, то цикл не все ячейки заполняет
+			for (let nextMonthsDayStart = 1; nextMonthsDayStart <= maxCells - length; nextMonthsDayStart++) {
+				cell.push(`${nextMonthsDayStart}`)
+				// console.log({nextMonthsDayStart})
+			}
+	
+			monthsCell.push(cell)
+			
+			dayArray.push(day)
+		}
+		props.addMonthsLength(monthsCell.length)
+		// console.table(monthsCell)
+
+		var boolMonths = false
+
+		let nowMonth = new Date().getMonth()  
+
+		
+		
+		return monthsCell.map((item, index) => (
+			<div className={style.monthsCell} value={index} key={index}>
+				<>
+				{/* {console.log({index})} */}
+				{index === nowMonth ? boolMonths = true : boolMonths = false}
+				{item.map((item, index) => (
+					<Cell
+						notString={typeof item !== 'string' && true}
+						item={item}
+						index={index}
+						key={index}
+						onClick={false}
+						monthsOn={boolMonths}
+
+						getDayOn={day => getDayOn(day)}
+					/>
+				))}
+				</>
+			</div>
+		))
+		
+	}
 
     return (
         <div className={style.calendarBody}>
@@ -104,7 +119,7 @@ export default function CalendarBody(props) {
             </div>
 			<div className={style.cellsBody}>
 				<div style={{transform: `translateX(-${props.addWidthTranslate}px)`}} className={style.cellsTrack}>
-					{getDay(2023)}
+					{GetDay(props, 2023)}
 				</div>
 			</div>
         </div>
