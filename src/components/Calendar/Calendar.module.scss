@@ -1,51 +1,74 @@
 $black: rgba(0, 0, 0, 0.561);
+$blue: rgb(78, 135, 251);
 
 .calendar{
-	width: calc(40px * 7);
+	width: calc(40px * 7 + 20px);
 	display: flex;
 	flex-flow: column;
-	gap: 10px;
 	margin: 0 auto;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 4px 4px 17px 0px rgb(190 190 190);
 	.calendarHead{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		select{
-			font-size: 14px;
-			color: black;
-		}
+		box-shadow: inset 0px -11px 5px -10px rgb(190 190 190);
+		padding: 15px 10px;
 		.button{
+			align-items: center;
+			justify-content: space-between;
 			display: flex;
 			align-items: center;
 			gap: 5px;
+			.dateOutput{
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				select{
+					font-size: 16px;
+					color: black;
+					appearance: none;
+				}
+				div{
+					font-size: 16px;
+				}
+			}
 			button{
 				cursor: pointer;
-				border: 1px solid black;
 				width: 30px;
 				height:30px;
 				font-size: 16px;
+				background: white;
+				color: $blue;
+				font-weight: 600;
 			}
 		}
 	}
 	.calendarBody{
+		box-shadow: inset 0px 6px 20px -10px rgb(117 117 117 / 36%);
+		border-radius: 0 0 8px 8px;
+		padding: 0 0 10px 0;
+		background: rgb(194 194 194 / 36%);
 		.cellsHead{
 			display: flex;
 			flex-flow: row;
 			justify-content: center;
-			h3{
-				width: 40px;
-				height:40px;
+			div{
+				min-width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $blue;
 			}
 		}
 		.cellsBody{
-			overflow-x: scroll;
+			overflow-x: hidden;
 			width: calc(40px * 7);
 			margin: 0 auto;
 			.cellsTrack{
 				display: flex;
 				// flex-flow: wrap;
 				align-items: row;
-				transition: transform .2s ease-in-out;
+				transition: transform .2s ease;
 				.monthsCell{
 					min-width: calc(40px * 7);
 					display: flex;
@@ -53,8 +76,18 @@ $black: rgba(0, 0, 0, 0.561);
 					gap: 0;
 					align-content: start;
 					div{
+						cursor: pointer;
 						width: 40px;
 						height:40px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 10px;
+						transition: background .2s ease-in-out;
+						&:hover{
+							background: lighten($color: $blue, $amount: 13%);
+							
+						}
 					}
 				}
 			}

@@ -29,16 +29,7 @@ export default function CalendarHead (props) {
 	
     return (
     	<div className={style.calendarHead}>
-    		<select>
-				{months
-				.filter((item, index) => index === selectDate)
-				.map((item, index) => (
-					<option hidden selected value={index}>{item.name}</option>
-				))}
-				{months.map((item, index) => (
-					<option style={{color: index === nowDate && "red"}} value={index}>{item.name}</option>
-				))}
-			</select>
+
 			<div className={style.button}>
 				<button 
 					disabled={position === 0 ? true : false} 
@@ -50,6 +41,22 @@ export default function CalendarHead (props) {
 					{"<"}
 				</button>
 			
+					<div className={style.dateOutput}>
+						<select>
+							{months
+							.filter((item, index) => index === selectDate)
+							.map((item, index) => (
+								<option hidden selected value={index}>{item.name}</option>
+							))}
+							{months.map((item, index) => (
+								<option style={{color: index === nowDate && "red"}} value={index}>{item.name}</option>
+							))}
+						</select>
+						<div>
+							2023
+						</div>
+					</div>
+
 				<button 
 					disabled={position > trackWidth * 10 ? true : false} 
 					onClick={() => {

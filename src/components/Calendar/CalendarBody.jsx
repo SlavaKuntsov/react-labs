@@ -94,13 +94,13 @@ export default function CalendarBody(props) {
     return (
         <div className={style.calendarBody}>
             <div className={style.cellsHead}>
-                <h3>Пн</h3>
-                <h3>Вт</h3>
-                <h3>Ср</h3>
-                <h3>Чт</h3>
-                <h3>Пт</h3>
-                <h3>Сб</h3>
-                <h3>Вс</h3>
+                <div>Пн</div>
+                <div>Вт</div>
+                <div>Ср</div>
+                <div>Чт</div>
+                <div>Пт</div>
+                <div>Сб</div>
+                <div>Вс</div>
             </div>
 			<div className={style.cellsBody}>
 				<div style={{transform: `translateX(-${props.addWidthTranslate}px)`}} className={style.cellsTrack}>
