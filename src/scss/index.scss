@@ -15,7 +15,10 @@ hr {
 
 $border: rgba(0, 0, 0, 0.561);
 
-
+.wrapper {
+	display: flex;
+	flex-flow: column-reverse;
+}
 
 .timezone {
     font-size: 16px;

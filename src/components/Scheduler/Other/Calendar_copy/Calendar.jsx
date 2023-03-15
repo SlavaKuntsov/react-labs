@@ -2,7 +2,6 @@ import React from "react";
 import style from "./Calendar.module.scss"
 import CalendarHead from "./CalendarHead";
 import CalendarBody from "./CalendarBody";
-// import Output from "./Output";
 
 export default function Calendar(props){
 
@@ -15,15 +14,26 @@ export default function Calendar(props){
  	return (
 		<div className={style.all}>
 			
-			{/* <Output /> */}		
-
 			<div className={style.calendar}>
 				<CalendarHead addLength={monthsLength} addClick={(width) => setWidthTranslate(width)}/>
 
-				<CalendarBody getDayOn={day => setDayOn([...dayOn, day])} addMonthsLength={length => setMonthsLength(length)} addWidthTranslate={widthTranslate}/>
+				<CalendarBody 
+					setAddNotes={notes => {
+						props.getOnClick(notes); 
+						console.log(notes)}
+					} 
+					getDayOn={day => {
+						setDayOn([...dayOn, day])
+						props.getDay(day)
+					}}
+					addMonthsLength={length => setMonthsLength(length)} 
+					addWidthTranslate={widthTranslate}
+					getMonthOn={month => props.getMonthOn(month)}
+					addNotesLength={props.addNotesLength}
+					addOnClick={props.addOnClick} 
+				/>
 			</div>
 
-			{/* <div>{dayOn.join(" ")}</div> */}
 		</div>
  	);
 }

@@ -10,6 +10,8 @@ import SortTable from "./components/SortTable/SortTable";
 import Table from "./components/Table/Table.jsx";
 import StudentInfo from "./components/StudentInfo/StudentInfo";
 import Notes from "./components/Notes/Notes";
+import Scheduler from "./components/Scheduler/Scheduler";
+import Comments from "./components/Comments/Comments";
 
 function App() {
 	
@@ -54,6 +56,12 @@ function App() {
 			<Notes />
 
 			<hr />
+			<h2>7</h2>
+			<Scheduler />
+
+			<hr/>
+			<h2>8</h2>
+			<Comments />
         </div>
     );
 }

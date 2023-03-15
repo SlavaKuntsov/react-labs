@@ -2,6 +2,7 @@ import React from "react";
 import style from "./AllProfessions.module.scss"
 
 function Profession(props) {
+	
 	const allProfessions = [
 		{job:"Программист", key:"prog"},
 		{job:"Архитектор", key:"arc"},

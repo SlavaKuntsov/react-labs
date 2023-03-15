@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./Notes.module.scss"
 
+import Cell from "./Cell";
+
 export default function Notes() {
 
 	const allNotesArray = [
@@ -16,6 +18,8 @@ export default function Notes() {
 	]
 	const [allNotes, setAllNotes] = React.useState(allNotesArray)
 
+	// console.table(allNotes)
+
 	const [buttonClick, setButtonClick] = React.useState(false)
 	const [addValueHeader, setAddValueHeader] = React.useState("")
 	const [addValueBody, setAddValueBody] = React.useState("")
@@ -29,10 +33,7 @@ export default function Notes() {
 		setAddDate(new Date().toISOString().split('T')[0])
 	}
 	
-	const formatDate = (dateStr) => {
-		let dArr = dateStr.split("-")
-		return dArr[2] + "-" + dArr[1]+ "-" + dArr[0]
-	}
+	
 
 	const deleteOneNote = (deleteIndex) => {
 		if(deleteIndex === 0) {
@@ -41,8 +42,17 @@ export default function Notes() {
 			// console.log(allNotes)
 		}
 		else{
-			allNotes.splice(deleteIndex-1, 1)
+			allNotes.splice(deleteIndex - 1, 1)
 			setAllNotes(allNotes.filter(index => index !== deleteIndex))
+		}
+	}
+
+	const deleteDefinedNotes = (indexDel) => {
+		console.log({indexDel})
+		allNotes.splice(indexDel, 1)
+		setAllNotes(allNotes.filter(index => index !== indexDel))
+		if(indexDel === 0) {
+			// setAllNotes(allNotes.length = 0)
 		}
 	}
 
@@ -53,18 +63,14 @@ export default function Notes() {
 
 				<div style={{height: addValueHeader !== "" ? "400px" : "440px"}} className={style.notesTrack}>
 					{allNotes.length !== 0 ? 
-						allNotes.map((item, index) => {
-							return(
-								<div key={index} style={{background: index >= 7 ? "rgb(255, 112, 112)" : "rgb(255, 250, 154)"}} className={style.notes}>
-									{index >= 7 && <span>У вас слишком много заметок</span>}
-									<div className={style.heading}>
-										<h3>{item.title}</h3>
-										<p className={style.date}>{formatDate(item.date)}</p>
-									</div>
-									<p>{item.text}</p>
-								</div>
-							)
-						})
+						allNotes.map((item, index) => (
+							<Cell 
+								index={index}
+								item={item}
+								key={index}
+								delete={indexDel => deleteDefinedNotes(indexDel)}
+							/>
+						))
 						:
 						<h4>Нет заметок</h4>
 					}

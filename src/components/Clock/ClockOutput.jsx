@@ -25,7 +25,7 @@ import style from "./Clock.module.scss"
 
 // }
 
-class Clock extends React.Component {
+class ClockOutput extends React.Component {
 
     constructor(props) {
         super(props);
@@ -35,10 +35,7 @@ class Clock extends React.Component {
     }
 
     componentDidMount() {
-        this.timerID = setInterval(
-            () => this.tick(),
-            1000
-        );
+        this.timerID = setInterval(() => this.tick(), 1000);
     }
 
     componentWillUnmount() {
@@ -65,4 +62,4 @@ class Clock extends React.Component {
     }
 }
 
-export default Clock;
+export default ClockOutput;
