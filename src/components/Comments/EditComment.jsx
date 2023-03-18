@@ -39,14 +39,14 @@ export default function EditComment  (props) {
     }
 
 	return (
-		<div className={style.edit}>
+		<div className={style.edit}>	
 			<div className={style.text}>
-				<p style={{width: !click ? "610px" : "570px"}}>{props.text}</p>	
-				{/* {!click ? 
+				{/* <p style={{width: !click ? "610px" : "570px"}}>{props.text}</p>	 */}
+				{!click ? 
 				<p style={{width: !click ? "610px" : "570px"}}>{editText}</p>	
 				:
 				<input type="text" value={editText} onChange={e => setEditText(e.target.value)}/>
-				} */}
+				}
 			</div>
 			<div className={style.textEdit}>
 				<button disabled={click}>

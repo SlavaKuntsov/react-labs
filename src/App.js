@@ -12,6 +12,7 @@ import StudentInfo from "./components/StudentInfo/StudentInfo";
 import Notes from "./components/Notes/Notes";
 import Scheduler from "./components/Scheduler/Scheduler";
 import Comments from "./components/Comments/Comments";
+import SortTableAdvanced from "./components/Catalog/SortTable";
 
 function App() {
 	
@@ -62,6 +63,11 @@ function App() {
 			<hr/>
 			<h2>8</h2>
 			<Comments />
+			
+			<hr/>
+			<h2>9</h2>
+			<SortTableAdvanced />
+
         </div>
     );
 }

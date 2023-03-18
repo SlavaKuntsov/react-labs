@@ -7,11 +7,11 @@ import OneComment from "./OneComment";
 
 export default function Comments() {
 	const allCommentsArray = [
-		// {avatar: "/img/comments/man.png",
-		// name: "Слава",
-		// text: "Some text",
-		// deleteWord: "1",
-		// email: "kuncovs19@gmaill.com"},
+		{avatar: "/img/comments/man.png",
+		name: "Слава",
+		text: "Some text",
+		deleteWord: "1",
+		email: "kuncovs19@gmaill.com"},
 		
 		
 	];
