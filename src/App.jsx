@@ -43,7 +43,7 @@ function App() {
 			<SortTable />
 
 			<hr />
-			<h2>4.1</h2>
+			<h2>4</h2>
 			<Calendar />
 
 			<hr />

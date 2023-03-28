@@ -11,6 +11,7 @@ export default function Calendar(props){
 	const [newYear, setNewYear] = React.useState(new Date().getFullYear());
 
 	const [dayOn, setDayOn] = React.useState([]);
+	console.log('dayOn: ', dayOn);
 
  	return (
 		<div className={style.all}>
