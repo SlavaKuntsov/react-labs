@@ -15,31 +15,6 @@ hr {
 
 $border: rgba(0, 0, 0, 0.561);
 
-.wrapper {
-	display: flex;
-	flex-flow: column-reverse;
-}
-
-.timezone {
-    font-size: 16px;
-    width: 400px;
-    // height: 30px;
-}
-
-
-.calendar{
-	border: 1px solid #565656;
-	// border-radius: 10px;
-	background: white;
-	display: flex;
-	flex-flow: column;
-	gap: 0;
-	.calendarHead{
-		background: #949494;
-		// border-radius: 10px 10px 0 0;
-	}
-}
-
 
 
 

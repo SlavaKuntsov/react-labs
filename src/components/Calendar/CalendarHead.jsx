@@ -3,7 +3,7 @@ import style from "./Calendar.module.scss"
 
 export default function CalendarHead (props) {
 
-	const months = [
+	const MONTHS = [
 		{name: "Январь"},
 		{name: "Февраль"},
 		{name: "Март"},
@@ -18,25 +18,37 @@ export default function CalendarHead (props) {
 		{name: "Декабрь"},
 	]
 
-	
 	const trackWidth = 40 * 7 // 280
 
 	const [position, setPosition] = React.useState((new Date().getMonth()) * 280);
 	const [selectDate, setSelectDate] = React.useState( new Date().getMonth() );
+	const [newYear, setNewYear] = React.useState(new Date().getFullYear());
 
 	let nowDate = new Date().getMonth()
 
 	props.addClick(position)
+	props.addYear(newYear)
 
-	// console.log({selectDate})
-
-
-	const selectMonths = (id = 3) => {
-		console.log({id})
-		return months.filter(item => {
-			return item.name === id
-		})
+	const newMonthsAfter = (months) => {
+		return MONTHS[months].name
 	}
+
+	const getYear = () => {
+		let yearArray = []
+		for (let year = 2018; year <= new Date().getFullYear(); year++) {
+			yearArray.push(year)
+		}
+		return yearArray.map(item => (
+			<option key={item} value={item}>{item}</option>
+		))
+	}
+
+	// const selectMonths = (id = 3) => {
+	// 	console.log({id})
+	// 	return months.filter(item => {
+	// 		return item.name === id
+	// 	})
+	// }
 	
     return (
     	<div className={style.calendarHead}>
@@ -54,28 +66,29 @@ export default function CalendarHead (props) {
 				</button>
 			
 					<div className={style.dateOutput}>
-						<select 
+						<div className={style.select}>
+							<p>{newMonthsAfter(selectDate)}</p>
+							<select 
+								onChange={e => {
+									setPosition(pos => (pos * 0) + (e.target.value * trackWidth));
+									setSelectDate(months => (months * 0) + Number(e.target.value)) ;
+									console.log( Number(e.target.value))
+								}}
+							>
+								{MONTHS.map((item, index) => (
+									<option style={{color: (index === nowDate && newYear === `${new Date().getFullYear()}`) && "red"}} value={index} key={index}>{item.name}</option>
+								))}
+							</select>
+						</div>
+						<select
 							onChange={e => {
-								setPosition(pos => (pos * 0) + (e.target.value * trackWidth));
-								setSelectDate(months => (months * 0) + Number(e.target.value)) ;
-								console.log( Number(e.target.value))
+								setNewYear(e.target.value)
+								
 							}}
 						>
-							{/* {months
-							.filter((item, index) => index === selectDate )
-							.map((item, index) => (
-								<option hidden selected key={index}>{item.name}</option>
-							))} */}
-							{/* {console.log("select " + selectDate)} */}
-							<option hidden defaultValue={new Date().getMonth()} key="">{months[selectDate].name}</option>
-
-							{months.map((item, index) => (
-								<option style={{color: index === nowDate && "red"}} value={index} key={index}>{item.name}</option>
-							))}
+							<option hidden defaultValue={new Date().getFullYear()}>{new Date().getFullYear()}</option>
+							{getYear()}
 						</select>
-						<div>
-							2023
-						</div>
 					</div>
 
 				<button 

@@ -40,15 +40,29 @@ $blue: rgb(115, 162, 254);
 				display: flex;
 				gap: 10px;
 				align-items: center;
+				.select{
+					position: relative;
+					p{
+						position: absolute;
+						top: 0;
+						left: 0;
+						color: black;
+						font-size: 16px;
+					}
+					select{
+						
+						opacity: 0;
+						font-size: 16px;
+						color: black;
+						appearance: none;
+						cursor: pointer;
+					}
+				}
 				select{
-					font-size: 16px;
-					color: black;
-					appearance: none;
-					cursor: pointer;
+
+					font-size: 13px;
 				}
-				div{
-					font-size: 16px;
-				}
+
 			}
 			button{
 				cursor: pointer;

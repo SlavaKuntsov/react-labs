@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "./components/layout/Layout"
 
 import Calendar from "./components/Calendar/Calendar";
 import Chess from "./components/Chess/Chess";
@@ -17,37 +18,37 @@ import SortTableAdvanced from "./components/Catalog/SortTable";
 function App() {
 	
     return (
-        <div className="wrapper">
-            <h2>1.1</h2>
-            <div>{new Date().toLocaleString() + ""}</div>
+		<Layout>
+			<h2>1.1</h2>
+			<div>{new Date().toLocaleString() + ""}</div>
 
-            <h2>1.2</h2>
-            <Table />
+			<h2>1.2</h2>
+			<Table />
 
-            <h2>1.3</h2>
-            <Chess />
+			<h2>1.3</h2>
+			<Chess />
 
-            <hr />
-            <h2>2.1</h2>
-            <Clock />
+			<hr />
+			<h2>2.1</h2>
+			<Clock />
 
-            <h2>2.2</h2>
-            <AllProfessions />
+			<h2>2.2</h2>
+			<AllProfessions />
 
-            <hr />
-            <h2>3.1</h2>
-            <PhoneInput />
+			<hr />
+			<h2>3.1</h2>
+			<PhoneInput />
 
-            <h2>3.2</h2>
-            <SortTable />
+			<h2>3.2</h2>
+			<SortTable />
 
-            <hr />
-            <h2>4.1</h2>
-            <Calendar />
+			<hr />
+			<h2>4.1</h2>
+			<Calendar />
 
-            <hr />
-            <h2>5</h2>
-            <SignUpForm />
+			<hr />
+			<h2>5</h2>
+			<SignUpForm />
 
 			<hr />
 			<h2>6.1</h2>
@@ -67,8 +68,7 @@ function App() {
 			<hr/>
 			<h2>9</h2>
 			<SortTableAdvanced />
-
-        </div>
+		</Layout>
     );
 }
 

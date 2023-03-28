@@ -5,7 +5,7 @@ export default function Cell (props) {
 
 	const [clickCell, setClickCell] = React.useState(props.onClick);
 
-	let now = new Date().getDate()
+	let nowDay = new Date().getDate()
 
 	const getDayOn = (day) => {
 		props.getDayOn(day)
@@ -19,7 +19,7 @@ export default function Cell (props) {
 				fontWeight: props.notString ? "500" : "300",
 				// border: clickCell ? "2px solid rgb(78, 135, 251)" : "2px solid transparent",
 				background: clickCell && "rgb(115, 162, 254)",
-				border: (props.notString && props.item === now && props.monthsOn) && "2px solid rgb(78, 135, 251)"
+				border: (props.notString && props.item === nowDay && props.monthsOn && props.selectYear === `${new Date().getFullYear()}` ) && "2px solid rgb(78, 135, 251)"
 			}} 
 			key={props.index}
 			onClick={() => {

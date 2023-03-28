@@ -13,7 +13,15 @@ table{
 	flex-flow: column;
 	margin: 0 auto;
 	gap: 20px;
+	width: 650px;
 	background: white;
+	input{
+		padding: 10px;
+		border: 1px solid black;
+		border-radius: 8px;
+		margin: 20px 0 0 20px;
+		font-size: 16px;
+	}
 	select{
 		font-size: 16px;
 		padding: 10px;

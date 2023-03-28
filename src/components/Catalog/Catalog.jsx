@@ -1,6 +1,7 @@
 import React from "react"
 import style from "./Catalog.module.scss"
 import Cart from "./Cart"
+import Search from "./Search";
 
 export default function Catalog  (props) {
 
@@ -23,15 +24,40 @@ export default function Catalog  (props) {
 		props.changeSort(item)
 	}
 
+	const [search, setSearch] = React.useState();
+
 	return (
 		<div className={style.catalog}>
+			<Search 
+				addSearch={str => setSearch(str)}
+			/>
 			<select onChange={e =>  onChangeSort(e.target.value)}>
 				<option selected disabled>Фильтр</option>
 				{sort.map((item, index) => (
 					<option value={item.sort} key={index}>{item.title}</option>
 				))}
 			</select>
-			{props.tableItems.map((item, index) => (
+			
+			{search !== "" ?
+			props.tableItems
+			.filter(item => item.name.toLocaleLowerCase().includes(search))
+			.map((item, index) => (
+				<Cart 
+					key={index}
+					id={index}
+					name={item.name}
+					price={item.price}
+					count={item.count}
+					image={item.image}
+					description={item.description}
+					new={item.new}
+					discount={item.discount}
+
+					addNew={index => props.addNew(index)}
+				/>
+			))
+			:
+			props.tableItems.map((item, index) => (
 				<Cart 
 					key={index}
 					id={index}
