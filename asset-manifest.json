@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/git@github.com:SlavaKuntsov/react-labs.git/static/css/main.19d7a4b8.css",
+    "main.js": "/git@github.com:SlavaKuntsov/react-labs.git/static/js/main.15e25713.js",
+    "index.html": "/git@github.com:SlavaKuntsov/react-labs.git/index.html",
+    "main.19d7a4b8.css.map": "/git@github.com:SlavaKuntsov/react-labs.git/static/css/main.19d7a4b8.css.map",
+    "main.15e25713.js.map": "/git@github.com:SlavaKuntsov/react-labs.git/static/js/main.15e25713.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19d7a4b8.css",
+    "static/js/main.15e25713.js"
+  ]
+}
